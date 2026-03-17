@@ -7,7 +7,7 @@ exports.register = async (req, res) => {
     try {
         const sql = "INSERT INTO users (name, email, password, role) VALUES (?, ?, ?, ?)";
         
-        await db.query(sql, [name, email, password, role || 'student']);
+        await db.query(sql, [name, email, password, role || 'user']);
 
         res.status(201).json({ 
             message: "User registered successfully vayo",
